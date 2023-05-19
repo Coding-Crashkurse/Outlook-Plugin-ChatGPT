@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Email & Calendar Plugin",
+  "name_for_model": "exchangeplugin",
+  "description_for_human": "Plugin that allows you to create, send, and manage emails and calendar events. Also, it allows reading the latest email.",
+  "description_for_model": "Plugin that allows you to create, send, and manage emails and calendar events. Also, it allows reading the latest email.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "http://localhost:4444/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:4444/logo.png",
+  "contact_email": "legal@example.com",
+  "legal_info_url": "http://example.com/legal"
+}

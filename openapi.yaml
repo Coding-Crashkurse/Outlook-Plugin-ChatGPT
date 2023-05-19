@@ -1,0 +1,99 @@
+openapi: 3.0.2
+info:
+  title: Exchange Email and Calendar API
+  version: "1.0"
+servers:
+  - url: http://localhost:4444
+paths:
+  /email/:
+    post:
+      summary: Send an email
+      operationId: sendEmail
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Email"
+      responses:
+        200:
+          description: Email sent successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Email"
+  /calendar/:
+    post:
+      summary: Create a calendar event
+      operationId: createCalendarEvent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CalendarItemModel"
+      responses:
+        200:
+          description: Calendar event created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CalendarItemModel"
+  /latest_email/:
+    get:
+      summary: Get the latest 10 emails
+      operationId: getLatestEmails
+      responses:
+        200:
+          description: Latest emails retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EmailData"
+components:
+  schemas:
+    Email:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        email_address:
+          type: string
+          format: email
+    CalendarItemModel:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        location:
+          type: string
+          nullable: true
+        start_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string
+          format: date-time
+        attendees:
+          type: array
+          items:
+            type: string
+          nullable: true
+    EmailData:
+      type: object
+      properties:
+        subject:
+          type: string
+        body:
+          type: string
+        author:
+          type: string
+          format: email
+        name:
+          type: string

@@ -1,0 +1,4 @@
+fastapi
+pydantic[email]
+uvicorn
+exchangelib
