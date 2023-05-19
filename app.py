@@ -1,14 +1,22 @@
-from pydantic import BaseModel, EmailStr
-from fastapi import FastAPI, Response
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
-from pydantic import BaseModel
+import os
 from typing import List, Optional
-from exchangelib import Account, Credentials, Message, Mailbox, CalendarItem, EWSTimeZone, Attendee
+
 from bs4 import BeautifulSoup
 from dateutil import parser
 from dotenv import load_dotenv
-import os
+from exchangelib import (
+    Account,
+    Attendee,
+    CalendarItem,
+    Credentials,
+    EWSTimeZone,
+    Mailbox,
+    Message,
+)
+from fastapi import FastAPI, Response
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from pydantic import BaseModel, EmailStr
 
 load_dotenv()
 
@@ -107,7 +115,6 @@ async def read_latest_emails():
         )
         email_list.append(email_data)
     return email_list
-
 
 
 @app.get("/logo.png")
