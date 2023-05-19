@@ -15,7 +15,7 @@ PASSWORD=deinPasswort
 
 ### POST /email/
 
-Mit diesem Endpunkt kannst du eine E-Mail senden. Du musst ein JSON-Objekt mit den folgenden Eigenschaften im Anforderungskörper bereitstellen:
+Mit diesem Endpunkt kannst du eine E-Mail senden. Du musst ein JSON-Objekt mit den folgenden Eigenschaften im Request Body bereitstellen:
 
 - `subject`: Der Betreff der E-Mail.
 - `body`: Der Inhalt der E-Mail.
@@ -23,7 +23,7 @@ Mit diesem Endpunkt kannst du eine E-Mail senden. Du musst ein JSON-Objekt mit d
 
 ### POST /calendar/
 
-Mit diesem Endpunkt kannst du einen Kalendereintrag erstellen. Du musst ein JSON-Objekt mit den folgenden Eigenschaften im Anforderungskörper bereitstellen:
+Mit diesem Endpunkt kannst du einen Kalendereintrag erstellen. Du musst ein JSON-Objekt mit den folgenden Eigenschaften im Request Body bereitstellen:
 
 - `subject`: Der Betreff des Kalendereintrags.
 - `body`: Weitere Details zum Kalendereintrag.
@@ -40,4 +40,3 @@ Mit diesem Endpunkt kannst du die neuesten 10 E-Mails in deinem Posteingang abru
 - `body`: Der Inhalt der E-Mail.
 - `author`: Die E-Mail-Adresse des Autors.
 - `name`: Der Name des Autors.
-"# Outlook-Plugin-ChatGPT" 
